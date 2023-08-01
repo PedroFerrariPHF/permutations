@@ -1,12 +1,10 @@
 # Python program for the above approach
-import math
-
-counter = 0
+import math 
 # Function to find the possible
 # permutations
 # H = até aonde vai calcular
 # l = de onde começa a calcualr
-def permutations(ressult, nums, l, h, counter) :
+def permutations(ressult, nums, l, h) :
      
     # Base case
     # Add the vector to result and return
@@ -28,7 +26,7 @@ def permutations(ressult, nums, l, h, counter) :
  
         # Calling permutations for
         # next greater value of l
-        permutations(ressult, nums, l + 1, h, counter);
+        permutations(ressult, nums, l + 1, h);
         
 
         # Backtracking
@@ -37,21 +35,19 @@ def permutations(ressult, nums, l, h, counter) :
         nums[i] = temp;
  
 # Function to get the permutations
-def permute(nums, nums2):
-    print(math.factorial(len(nums)))
+def permute(nums):
+    print("number of permutations; ", math.factorial(len(nums)))
     # Declaring result variable
     x = len(nums) - 1;
-    x2 = len(nums2) -1;
     result = [];
      
     # Calling permutations for the first
     # time by passing l
     # as 0 and h = nums.size()-1
-    permutations(result, nums, 0, x, counter);
+    permutations(result, nums, 0, x);
     return result;
  
 # Driver Code
 if __name__ == '__main__':
-    nums = [4, 6, 5,];
-    nums2 = [8, 3, 9];
-    res = permute(nums, nums2);
+    nums = [1, 2, 3, 4, 5];
+    res = permute(nums);
